@@ -3,6 +3,7 @@
 <h1>Users</h1>
 
 <div id="users">
+  <p>lineで友達追加してね！</p>
   <% @users.each do |user| %>
     <%= render user %>
     <p>
@@ -12,3 +13,6 @@
 </div>
 
 <%= link_to "New user", new_user_path %>
+<%= link_to 'Login with Line', auth_at_provider_path(provider: :line) %>
+<div class="line-it-button" data-lang="ja" data-type="friend" data-env="REAL"   data-lineId="@566hilys" style="display: none;"></div>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
