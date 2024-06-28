@@ -13,12 +13,11 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+      REDIS_URL: redis://redis:6379
     ports:
       - 3000:3000
     stdin_open: true
     tty: true
-    environment:
-      REDIS_URL: redis://redis:6379
   db:
     image: postgres
     environment:

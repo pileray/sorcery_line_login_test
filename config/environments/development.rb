@@ -76,4 +76,5 @@ Rails.application.configure do
 
   # ngrok用
   config.hosts.clear
+  Rails.application.routes.default_url_options[:host] = 'd631-103-5-140-144.ngrok-free.app'
 end

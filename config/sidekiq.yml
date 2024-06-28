@@ -3,3 +3,8 @@
   - default
   - active_storage_analysis
   - active_storage_purge
+# :scheduler:
+#   :schedule:
+#     line_notifications:
+#       cron: '0 */5 * * * *'
+#       class: LineNotificationsJob
