@@ -9,6 +9,7 @@ services:
       - node_modules:/myapp/node_modules
     depends_on:
       - db
+      - redis
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -16,6 +17,8 @@ services:
       - 3000:3000
     stdin_open: true
     tty: true
+    environment:
+      REDIS_URL: redis://redis:6379
   db:
     image: postgres
     environment:
@@ -23,8 +26,16 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
 
 volumes:
   bundle:
   postgres_data:
   node_modules:
+  redis:

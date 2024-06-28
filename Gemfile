@@ -50,6 +50,11 @@ gem "bootsnap", require: false
 # 認証用にsorceryを導入
 gem 'sorcery'
 
+# LINE通知の定期実行
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem 'line-bot-api'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
